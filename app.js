@@ -28,7 +28,7 @@ app.post("/api/chatbot", async(req,res)=> {
     const context = `
         Eres un asistente de soporte para el supermercado "Aborrotes Don Ramón".
         Información del negocio:
-            -Ubicación: Lomas de San Francisco 8, Lomas de Cervera, 36257 Marfil, Gto.
+            -Ubicación: Segunda Cerrada 13-Local A, Tacubaya, Miguel Hidalgo, 11870 Ciudad de México, CDMX
             -Horario: Lunes a Viernes de 9:00am a 5:00pm.
             -Productos: Pan, Leche, Huevos, Frutas, Carnes y bebidas
             -Metodos de pago: Efectivo, tarjeta
