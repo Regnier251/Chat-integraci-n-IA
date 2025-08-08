@@ -15,22 +15,9 @@ Métodos de pago aceptados
 ⚙️ Requisitos
 
 Node.js (v16 o superior)
-
 npm (gestor de paquetes)
-
 Clave API de OpenAI
 
-📁 Estructura del proyecto
-
-bash
-Copiar
-Editar
-Chat-conversacional-openIA/
-├── public/               # Archivos estáticos del frontend (si los tienes)
-├── server.js             # Lógica principal del servidor y del chatbot
-├── .env                  # Contiene la clave API de OpenAI
-├── package.json          # Dependencias y configuraciones del proyecto
-└── README.md             # Este archivo
 🚀 Instalación y ejecución
 
 Clona el repositorio o descarga los archivos.
@@ -66,22 +53,18 @@ El servidor estará disponible en http://localhost:3000.
 
 🎯 Características
 ✅ Responde preguntas sobre el supermercado Abarrotes Don Ramón.
-
 ✅ Ofrece respuestas concisas y directas utilizando el modelo GPT-4.
-
 ✅ Soporta integración con una interfaz de frontend estática (en la carpeta public/).
-
 ✅ API de chatbot accesible mediante POST a /api/chatbot.
 
 🛠️ Lógica del código
 
 server.js: Maneja las peticiones del servidor, integrando el modelo GPT-4 y procesando las solicitudes del chatbot.
-
 .env: Configuración de la clave API de OpenAI.
-
 public/: Contendrá los archivos estáticos del frontend (si decides añadir una interfaz de usuario).
 
 📸 Captura de pantalla
+<img width="753" height="649" alt="Screenshot from 2025-08-08 12-41-50" src="https://github.com/user-attachments/assets/2c031cc5-d16d-46f1-9b82-f53a9c2f70dc" />
 
 📜 Licencia
 Este proyecto es de código abierto bajo la licencia MIT.
