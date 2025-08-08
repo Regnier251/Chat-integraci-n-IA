@@ -1,5 +1,5 @@
 {
-  "name": "02-Chat-conversacional-OpenAI",
+  "name": "02-proyecto-chat-conversacional-openia",
   "version": "1.0.0",
   "description": "Proyecto de traducciones usando Javascript y el API de OpenAI",
   "main": "app.js",
