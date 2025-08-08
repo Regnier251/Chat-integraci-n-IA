@@ -42,15 +42,22 @@ OPENAI_API_KEY=tu_clave_de_api_aqui
 Ejecuta el servidor:
 
 bash
+
 Copiar
+
 Editar
+
 npm start
+
 El servidor estará disponible en http://localhost:3000.
 
 🎯 Características </br>
 ✅ Responde preguntas sobre el supermercado Abarrotes Don Ramón.
+
 ✅ Ofrece respuestas concisas y directas utilizando el modelo GPT-4.
+
 ✅ Soporta integración con una interfaz de frontend estática (en la carpeta public/).
+
 ✅ API de chatbot accesible mediante POST a /api/chatbot.
 
 🛠️ Lógica del código </br>
