@@ -63,9 +63,11 @@ server.js: Maneja las peticiones del servidor, integrando el modelo GPT-4 y proc
 .env: Configuración de la clave API de OpenAI.
 public/: Contendrá los archivos estáticos del frontend (si decides añadir una interfaz de usuario).
 
+📜 Licencia
+Este proyecto es de código abierto bajo la licencia MIT.
+
 📸 Captura de pantalla
 </br>
 <img width="753" height="649" alt="Screenshot from 2025-08-08 12-41-50" src="https://github.com/user-attachments/assets/2c031cc5-d16d-46f1-9b82-f53a9c2f70dc" />
 
-📜 Licencia
-Este proyecto es de código abierto bajo la licencia MIT.
+
