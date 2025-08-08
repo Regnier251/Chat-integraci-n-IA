@@ -39,6 +39,7 @@ app.post("/api/chatbot", async(req,res)=> {
     const {message} = req.body;
 
     if(!message) return res.status(404).json({error: "Has mandado un mensaje vacío!!"});
+    
 
     //Petición al modelo de intelígencia artificial
     try{
