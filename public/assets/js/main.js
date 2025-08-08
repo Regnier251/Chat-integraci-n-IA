@@ -1,6 +1,7 @@
 const sendButton = document.querySelector("#sendButton");
 const inputText = document.querySelector("#inputText");
 const messagesContainer = document.querySelector(".chat__messages")
+const userId = Date.now() + Math.floor(777 + Math.random() * 7000);
 
 const sendMessage = async() =>{
 
@@ -20,12 +21,14 @@ const sendMessage = async() =>{
         const response = await fetch('/api/chatbot', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({message:myMessage})
+            body: JSON.stringify({
+                userId,
+                message:myMessage})
         })
     // Incrustar mensaje dle bot en el chat
     const data = await response.json();
 
-    messagesContainer.innerHTML += `<div class="chat__message chat__message--bot">Don Ramón:${data.reply}</div>`;
+    messagesContainer.innerHTML += `<div class="chat__message chat__message--bot">Don Ramón: ${data.reply}</div>`;
 
     } catch (error) {
         console.log("error:", error);

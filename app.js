@@ -22,24 +22,34 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
+const context = `
+Eres un asistente de soporte para el supermercado "Aborrotes Don Ramón".
+Información del negocio:
+    -Ubicación: Segunda Cerrada 13-Local A, Tacubaya, Miguel Hidalgo, 11870 Ciudad de México, CDMX
+    -Horario: Lunes a Viernes de 9:00am a 5:00pm.
+    -Productos: Pan, Leche, Huevos, Frutas, Carnes y bebidas
+    -Metodos de pago: Efectivo, tarjeta
+Solo puedes responder preguntas sobre la tienda. Cualquier otra pregunta está prohibida.
+`;
+
+let conversation = {};
+
+
 //Ruta / endpoint / url
 app.post("/api/chatbot", async(req,res)=> {
     
-    const context = `
-        Eres un asistente de soporte para el supermercado "Aborrotes Don Ramón".
-        Información del negocio:
-            -Ubicación: Segunda Cerrada 13-Local A, Tacubaya, Miguel Hidalgo, 11870 Ciudad de México, CDMX
-            -Horario: Lunes a Viernes de 9:00am a 5:00pm.
-            -Productos: Pan, Leche, Huevos, Frutas, Carnes y bebidas
-            -Metodos de pago: Efectivo, tarjeta
-        Solo puedes responder preguntas sobre la tienda. Cualquier otra pregunta está prohibida.
-    `;
+   
 
     //Recibir pregunta del usuario
-    const {message} = req.body;
+    const {userId, message} = req.body;
 
     if(!message) return res.status(404).json({error: "Has mandado un mensaje vacío!!"});
     
+    if(!conversation[userId]) {
+        conversation[userId] = [];
+    }
+
+    conversation[userId].push({role: "user", content: message})
 
     //Petición al modelo de intelígencia artificial
     try{
@@ -49,13 +59,21 @@ app.post("/api/chatbot", async(req,res)=> {
             messages: [
                 {role: "system", content: context},
                 {role: "system", content: "Debes responder de la forma corta y directa, usando los menores tokens posibles."},
-                {role: "user", content: message}
+                ...conversation[userId]
             ],
             max_tokens:200
         })
 
         //Devolver respuesta
         const reply = response.choices[0].message.content;
+
+        // Añadir al asistente la respuesta
+        conversation[userId].push({role: "assitant", content: reply});
+
+        //Limitar numeros de mensajes
+        if(conversation[userId].length > 12) {
+            conversation[userId] = conversation[userId].slice(-10);
+        }
 
         return res.status(200).json({reply});
 
