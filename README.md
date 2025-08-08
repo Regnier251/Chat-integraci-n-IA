@@ -43,22 +43,16 @@ Ejecuta el servidor:
 
 bash
 
-Copiar
-
-Editar
-
-npm start
-
+Copiar </br>
+Editar </br>
+npm start </br>
 El servidor estará disponible en http://localhost:3000.
 
 🎯 Características </br>
-✅ Responde preguntas sobre el supermercado Abarrotes Don Ramón.
-
-✅ Ofrece respuestas concisas y directas utilizando el modelo GPT-4.
-
-✅ Soporta integración con una interfaz de frontend estática (en la carpeta public/).
-
-✅ API de chatbot accesible mediante POST a /api/chatbot.
+✅ Responde preguntas sobre el supermercado Abarrotes Don Ramón. </br>
+✅ Ofrece respuestas concisas y directas utilizando el modelo GPT-4. </br>
+✅ Soporta integración con una interfaz de frontend estática (en la carpeta public/). </br>
+✅ API de chatbot accesible mediante POST a /api/chatbot. </br>
 
 🛠️ Lógica del código </br>
 server.js: Maneja las peticiones del servidor, integrando el modelo GPT-4 y procesando las solicitudes del chatbot.
